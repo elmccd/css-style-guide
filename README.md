@@ -8,6 +8,7 @@
 - [Responsive and Media queries](#responsive-and-media-queries)
 - [Graceful Degradation vs Progressive Enhancement](#graceful-degradation-vs-progressive-enhancement)
 - [Sources](#sources)
+
 ##General rules
 - split your site to independent modules and keep them in seperate files. 
   Don't create files with a hundreds of lines
