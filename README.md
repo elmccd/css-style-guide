@@ -7,8 +7,23 @@
 - [CSS preprocessors](#css-preprocessors)
 - [Responsive and Media queries](#responsive-and-media-queries)
 - [Graceful Degradation vs Progressive Enhancement](#graceful-degradation-vs-progressive-enhancement)
-
+- [Sources](#sources)
 ##General rules
+- split your site to independent modules and keep them in seperate files. 
+  Don't create files with a hundreds of lines
+- keep your css structure flat. Try to not nest selectors deeper than 3 levels.
+
+`.comment_author` - good
+
+`.comments .comment .author` - worse
+
+`.container .content .comments .comment .author` - the worst
+
+- don’t use id attribute to apply styles.
+- prefer classes in selectors than tag names
+- don't abuse operators like > ~ +
+- don’t make selectors more strict than they need it. Use: `.comments_form .save-button` instead of `form.comments_form button.save-button`
+- use helpers like `.clearfix`, `.hidden`, `.pull-left`, `text-center`
 
 ##SMACSS principles
 
@@ -39,3 +54,6 @@ Progressive Enhancement
 ```
 ##Graceful Degradation vs Progressive Enhancement
 - use Progressive Enhancement whenever you can
+
+##Sources
+http://smacss.com/
