@@ -10,21 +10,35 @@
 - [Sources](#sources)
 
 ##General rules
+- use your project's [EditorConfig](http://editorconfig.org/) (with extension to your editor), or create it. Preferable configuration:
+```
+[*.css, *.scss, *.less, *.styl]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
 - split your site to independent modules and keep them in seperate files. 
-  Don't create files with a hundreds of lines
-- keep your css structure flat. Try to not nest selectors deeper than 3 levels.
+  Don't create files with hundreds of lines.
+- keep your css structure flat. Try to not nest selectors deeper than 3 levels. <sup>[more](http://thesassway.com/intermediate/avoid-nested-selectors-for-more-modular-css)</sup>
+  - `.comment_author` - good
 
-`.comment_author` - good
+  - `.comments .comment .author` - worse
 
-`.comments .comment .author` - worse
-
-`.container .content .comments .comment .author` - the worst
+  - `.container .content .comments .comment .author` - the worst
 
 - don’t use id attribute to apply styles.
 - prefer classes in selectors than tag names
 - don't abuse operators like > ~ +
 - don’t make selectors more strict than they need it. Use: `.comments_form .save-button` instead of `form.comments_form button.save-button`
-- use helpers like `.clearfix`, `.hidden`, `.pull-left`, `text-center`
+- helpers like `.clearfix`, `.hidden`, `.pull-left`, `text-center`, `mt10`(margin-top: 10) etc. are good.
+- don't repeat your declaration with prefixes like -webkit-, -moz-, use [autoprefixer](https://github.com/postcss/autoprefixer) for building cross browser release.
+- building release
+  - marge and minify your CSS files
+  - use [uncss](https://github.com/giakki/uncss)
+
 
 ##SMACSS principles
 
