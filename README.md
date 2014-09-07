@@ -5,7 +5,7 @@
 - [SMACSS with AngularJS](#smacss-with-angularjs)
 - [CSS frameworks](#css-frameworks)
 - [CSS preprocessors](#css-preprocessors)
-- [Responsive and Media queries](#responsive-and-media-queries)
+- [Responsiveness and Media queries](#responsiveness-and-media-queries)
 - [Graceful Degradation vs Progressive Enhancement](#graceful-degradation-vs-progressive-enhancement)
 - [Sources](#sources)
 
@@ -44,13 +44,47 @@ insert_final_newline = true
 
 ##SMACSS principles <sup>[more #1](http://smacss.com/) </sup> <sup> [more #2](https://github.com/jonathanpath/SASS-SMACSS)</sup>
 
+Seperate css beetween
+- Base
+  - normalize css
+  - default/global styles 
+- Layout
+  - css for scaffold main section of website
+  - most common used properties: width, float, clear, margin
+  - if you are using grid system (e.g. in bootstrap) it does layout's job
+- Module
+  - everything that is repeating or can be repeated in the future. 
+  - Single file - single module. 
+  - module can be nested in another module.
+  - module cannot have impact to another module (except of module inheritance)
+  - modules should can work everywhere. Don’t apply specific properties like ‘float’ this should be applied in layout section or by grid system / helpers (e.g. pull-left in bootsrap).
+- State
+  - all dynamicaly styles that can be applied both for layout and modules
+  - often with !important
+- Theme
+  - variables with all colors, fonts, padding values.
+
 ##SMACSS with AngularJS
+- Kepp directive styles as SMACSS module
+- Partial(Controller) styles are related to SMACSS layout
 
 ##CSS frameworks
-
+ - Choose your favourite and suitable for project type (e.g., Twitter Bootstrap, Zurb Foundation, Semantic UI, Pure CSS)
+ - always use it for applications with rich user interface like admin panels.
+ - If you need dedicated graphic layout, make theme for your framework.
+ - Use build in helpers whenever it's possible rather than writing own css
+ 
 ##CSS preprocessors
+- stop writing css
+- choose your favourite preprocessor (Sass Less, Stylus)
+- while using stylus choose one style and stick to it. (braces, colons, semicolons).
+```stylus
+a
+  color red
+  background: blue; //bad
+```
 
-##Responsive and Media queries
+##Responsiveness and Media queries
 
 - Use % units for layouts
 - When specifing fixed size in px add `max-width:100%` both for layout and images
